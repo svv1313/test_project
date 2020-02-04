@@ -17,11 +17,9 @@ const Slider = () => {
 
   const _onMouseUp = () => {
     setDragging(false);
-    console.log("MOUSE UP", cordY);
   };
 
   const _onMouseMove = event => {
-    console.log("MOUSE MOVE", cordY);
     if (!dragging) return;
 
     const offset = event.clientY - myRef.current.getBoundingClientRect().top;
@@ -34,16 +32,8 @@ const Slider = () => {
     }
   };
 
-  // const _onMouseOut = () => {
-  //   setDragging(false);
-  // };
-
   return (
-    <div
-      className="slider-container"
-      //onMouseOut={_onMouseOut}
-      onMouseMove={_onMouseMove}
-    >
+    <div className="slider-container" onMouseMove={_onMouseMove}>
       <span className="slider-indicator">100</span>
       <div
         className="slider-bar-top"
