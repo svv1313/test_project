@@ -1,0 +1,10 @@
+#counter {
+    transform: translateY(480px);
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+  from {transform: translateY(0px)}
+  to {transform: translateY(480px)}
+}
