@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/input.css";
 
 const InputComponent = () => {
   const inpRef = React.createRef();
