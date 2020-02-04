@@ -1,10 +1,62 @@
-#counter {
-    transform: translateY(480px);
-    animation-name: example;
-    animation-duration: 4s;
+.slider-container {
+  display: flex;
+  flex-direction: row;
 }
 
-@keyframes example {
-  from {transform: translateY(0px)}
-  to {transform: translateY(480px)}
+.indicators-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 107px;
+}
+
+span.slider-indicator {
+  color: white;
+  text-align: center;
+  font-size: 42px;
+}
+
+.slider-bar-top {
+  user-select: none;
+  background-color: #6ff48d;
+  width: 107px;
+}
+
+.slider-bar-bottom {
+  background-color: #fa6868;
+  width: 107px;
+}
+
+.slider-handle {
+  cursor: pointer;
+  position: relative;
+  width: 146px;
+  height: 68px;
+  color: white;
+  font-size: 36px;
+}
+
+.slider-handle span {
+  line-height: 68px;
+  height: 100%;
+  position: absolute;
+  left: 32px;
+  font-weight: 200;
+}
+
+.slider-handle .arrow {
+  display: inline-block;
+  border-top: 34px solid transparent;
+  border-bottom: 34px solid transparent;
+  border-right: 45px solid #2a434f;
+  width: 0;
+  height: 0;
+}
+
+.slider-handle .handle {
+  display: inline-block;
+  border-radius: 0 7px 7px 0;
+  background-color: #2a434f;
+  width: 101px;
+  height: 68px;
 }

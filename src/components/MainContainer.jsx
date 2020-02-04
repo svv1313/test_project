@@ -5,6 +5,7 @@ import { ApolloProvider } from "react-apollo";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import MainItemContainer from "../shared/MainItemContainer";
 import Slider from "./Slider";
+import Shell from "./Shell";
 import Table from "./Table";
 
 const cache = new InMemoryCache();
@@ -31,13 +32,13 @@ const MainContainer = () => {
       <MainItemContainer>
         <Slider />
       </MainItemContainer>
-      <MainItemContainer name={'main-block'}>
+      <MainItemContainer name={"main-block"}>
         <ApolloProvider client={client}>
           <Table />
         </ApolloProvider>
       </MainItemContainer>
       <MainItemContainer>
-        <Slider />
+        <Shell />
       </MainItemContainer>
     </main>
   );
