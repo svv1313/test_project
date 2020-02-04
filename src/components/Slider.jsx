@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import InputComponent from "./InputComponent";
 
 const HEIGHT = 500;
 const HANDLE_HALF_HEIGHT = 34;
@@ -65,6 +66,7 @@ const Slider = () => {
         className="slider-bar-bottom"
         style={{ height: `${HEIGHT - cordY}px` }}
       />
+      <InputComponent />
     </div>
   );
 };
