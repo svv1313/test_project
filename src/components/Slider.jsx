@@ -7,7 +7,7 @@ const HANDLE_HALF_HEIGHT = 34;
 const Slider = () => {
   const sliderRef = React.createRef();
   const [dragging, setDragging] = useState(false);
-  const [topOffset, setTopOffset] = useState(0);
+  const [topOffset, setTopOffset] = useState(HEIGHT);
 
   const _onMouseDown = event => {
     event.preventDefault();
