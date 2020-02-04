@@ -23,12 +23,12 @@
   color: #ffffff;
   display: flex;
   justify-content: space-between;
+  font-size: 35px;
+  font-size: 600;
 }
 
 .header_icon {
   display: flex;
-  font-size: 35px;
-  font-size: 600;
 }
 
 .header_icon img {
@@ -36,6 +36,14 @@
   height: 30px;
   margin-right: 17px;
 }
+
+.close {
+  cursor: pointer;
+}
+.close:hover {
+  color: red;
+}
 .children {
   padding: 16px;
+  color: #ffffff;
 }
