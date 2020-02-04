@@ -17,6 +17,10 @@ span.slider-indicator {
   font-size: 42px;
 }
 
+.slider {
+  cursor: pointer;
+}
+
 .slider-bar-top {
   user-select: none;
   background-color: #6ff48d;
