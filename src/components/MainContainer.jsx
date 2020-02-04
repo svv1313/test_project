@@ -1,6 +1,7 @@
 import React from 'react';
 import MainItemContainer from '../shared/MainItemContainer';
 import Slider from './Slider';
+import Shell from './Shell';
 
 const MainContainer = () => {
     return (
@@ -9,10 +10,10 @@ const MainContainer = () => {
           <Slider />
         </MainItemContainer>
         <MainItemContainer>
-          <Slider />
+          {/* <Slider /> */}
         </MainItemContainer>
         <MainItemContainer>
-          <Slider />
+          <Shell />
         </MainItemContainer>
       </main>
     );

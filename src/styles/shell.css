@@ -1,0 +1,26 @@
+.shell_container {
+    width: 100%;
+}
+
+img.shell {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 274px;
+}
+
+img.upper_shell {
+    position: relative;
+    top: 175px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 208px;
+    transition: top 1.2s ease-in-out 0.5s;
+}
+
+img.upper_shell:hover {
+    cursor: pointer;
+    top: 145px;
+    transition: top 0.4s ease-in-out 0s;
+}
