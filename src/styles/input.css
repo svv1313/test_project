@@ -1,0 +1,74 @@
+.input_container {
+  width: 381px;
+  height: 57px;
+  display: flex;
+}
+
+.input_item {
+  padding: 7px 10px;
+  width: 265px;
+  color: #80a2cc;
+  font-size: 14px;
+  background-color: #0a1a33;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.input_item p {
+  margin-bottom: 5px;
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  background-color: #fec41c;
+  border-radius: 50%;
+  width: 15.07px;
+  height: 15.07px;
+}
+.icon img {
+  width: 15.07px;
+  height: 15.07px;
+}
+.input input {
+  background-color: transparent;
+  height: 24px;
+  width: 225px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+input:hover,
+input:focus {
+  border: 1px solid #275e9a;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.math_btn {
+  height: 100%;
+  width: 58px;
+  background-color: #275e9a;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+}
+.math_btn:hover {
+  background-color: #2f67a3;
+}
+
+.math_btn.multiply {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-left: 1px;
+}
