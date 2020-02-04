@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Counter from "./Counter";
 
 const HEIGHT = 500;
 const HANDLE_HALF_HEIGHT = 34;
@@ -42,13 +41,20 @@ const Slider = () => {
     <div
       className="slider-container"
       //onMouseOut={_onMouseOut}
-      onMouseMove={_onMouseMove}><span className='slider-indicator'>100</span>
-      <div className="slider-bar-top" ref={myRef} style={{ height: `${cordY}px` }}>
+      onMouseMove={_onMouseMove}
+    >
+      <span className="slider-indicator">100</span>
+      <div
+        className="slider-bar-top"
+        ref={myRef}
+        style={{ height: `${cordY}px` }}
+      >
         <div
           className="slider-handle"
           style={{ top: `${cordY - HANDLE_HALF_HEIGHT}px` }}
           onMouseDown={_onMouseDown}
-          onMouseUp={_onMouseUp}>
+          onMouseUp={_onMouseUp}
+        >
           <div className="arrow" />
           <div className="handle">
             <span>{Math.abs(cordY / (HEIGHT / 100) - 100).toFixed(2)}</span>
