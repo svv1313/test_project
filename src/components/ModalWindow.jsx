@@ -1,24 +1,26 @@
-import React, { useEffect } from "react";
+import React from "react";
+import "../styles/modal_window.css";
 
-const ModalWindow = props => {
-  const changeStatus = status => {
-    if (status) {
-      status = status;
-      document.body.classList.add("modalOpen");
-    } else {
-      status = status;
-      document.body.classList.remove("modalOpen");
-    }
-  };
-
+const ModalWindow = ({ onClose, show }) => {
+  if (!show) return null;
   return (
-    <div className="modal_container">
-      <div className="header">
-        <p>CONFIRM</p>
-        <div onClick={() => changeStatus(false)} className="close">
-          X
+    <div className="backdrop">
+      <div className="modal_container">
+        <div className="header">
+          <p>CONFIRM</p>
+          <div onClick={onClose} className="close">
+            X
+          </div>
         </div>
-        <div className="children"></div>
+        <div className="children">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus rem
+          cum quos veritatis nemo itaque iure ratione in molestiae, illum vitae
+          enim dicta tempora fugit, dolorem omnis autem eos! Aperiam. Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Error, eius iste
+          ipsum in adipisci maxime officia harum, perspiciatis excepturi ipsa
+          expedita voluptate! Labore officiis inventore ullam sapiente, fuga
+          omnis eum.
+        </div>
       </div>
     </div>
   );
