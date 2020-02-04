@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import InputComponent from "./InputComponent";
 
 const HEIGHT = 500;
 const HANDLE_HALF_HEIGHT = 34;
 
 const Slider = () => {
-  const myRef = React.createRef();
+  const sliderRef = React.createRef();
   const [dragging, setDragging] = useState(false);
-  const [cordY, setCordY] = useState(0);
+  const [topOffset, setTopOffset] = useState(0);
 
   const _onMouseDown = event => {
     event.preventDefault();
     setDragging(true);
-    console.log("MOUSE DOWN", cordY);
   };
 
   const _onMouseUp = () => {
@@ -22,42 +21,52 @@ const Slider = () => {
   const _onMouseMove = event => {
     if (!dragging) return;
 
-    const offset = event.clientY - myRef.current.getBoundingClientRect().top;
+    const offset =
+      event.clientY - sliderRef.current.getBoundingClientRect().top;
     if (offset >= 0 && offset <= HEIGHT) {
-      setCordY(offset);
+      setTopOffset(offset);
     } else if (offset < 0) {
-      setCordY(0);
+      setTopOffset(0);
     } else if (offset > HEIGHT) {
-      setCordY(HEIGHT);
+      setTopOffset(HEIGHT);
     }
   };
 
+  const currentIndicatorNumber = Math.abs(
+    topOffset / (HEIGHT / 100) - 100
+  ).toFixed(2);
+  const handlePosition = topOffset - HANDLE_HALF_HEIGHT;
+  const barBottomHeight = HEIGHT - topOffset;
+
   return (
-    <div className="slider-container" onMouseMove={_onMouseMove}>
-      <span className="slider-indicator">100</span>
-      <div
-        className="slider-bar-top"
-        ref={myRef}
-        style={{ height: `${cordY}px` }}
-      >
-        <div
-          className="slider-handle"
-          style={{ top: `${cordY - HANDLE_HALF_HEIGHT}px` }}
-          onMouseDown={_onMouseDown}
-          onMouseUp={_onMouseUp}
-        >
-          <div className="arrow" />
-          <div className="handle">
-            <span>{Math.abs(cordY / (HEIGHT / 100) - 100).toFixed(2)}</span>
+    <Fragment>
+      <div className="slider-container" onMouseMove={_onMouseMove}>
+        <div className="indicators-container" style={{ height: `${HEIGHT}px` }}>
+          <span className="slider-indicator">100</span>
+          <span className="slider-indicator">0</span>
+        </div>
+        <div className="slider" ref={sliderRef}>
+          <div className="slider-bar-top" style={{ height: `${topOffset}px` }}>
+            <div
+              className="slider-handle"
+              style={{ top: `${handlePosition}px` }}
+              onMouseDown={_onMouseDown}
+              onMouseUp={_onMouseUp}
+            >
+              <div className="arrow" />
+              <div className="handle">
+                <span>{currentIndicatorNumber}</span>
+              </div>
+            </div>
           </div>
+          <div
+            className="slider-bar-bottom"
+            style={{ height: `${barBottomHeight}px` }}
+          />
         </div>
       </div>
-      <div
-        className="slider-bar-bottom"
-        style={{ height: `${HEIGHT - cordY}px` }}
-      />
       <InputComponent />
-    </div>
+    </Fragment>
   );
 };
 

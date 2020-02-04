@@ -24,6 +24,18 @@
   display: flex;
   justify-content: space-between;
 }
+
+.header_icon {
+  display: flex;
+  font-size: 35px;
+  font-size: 600;
+}
+
+.header_icon img {
+  width: 35px;
+  height: 30px;
+  margin-right: 17px;
+}
 .children {
   padding: 16px;
 }

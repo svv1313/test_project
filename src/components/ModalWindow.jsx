@@ -1,4 +1,5 @@
 import React from "react";
+import warning from "../assets/warning.svg";
 import "../styles/modal_window.css";
 
 const ModalWindow = ({ onClose, show }) => {
@@ -7,7 +8,10 @@ const ModalWindow = ({ onClose, show }) => {
     <div className="backdrop">
       <div className="modal_container">
         <div className="header">
-          <p>CONFIRM</p>
+          <div className="header_icon">
+            <img src={warning} alt={warning} />
+            <p>CONFIRM</p>
+          </div>
           <div onClick={onClose} className="close">
             X
           </div>

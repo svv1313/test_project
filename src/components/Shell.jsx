@@ -1,4 +1,4 @@
-import React, { Component, useState, Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import UpperShellImg from "../assets/Shell1.svg";
 import ShellImg from "../assets/Shell2.svg";
 import ModalWindow from "./ModalWindow";
