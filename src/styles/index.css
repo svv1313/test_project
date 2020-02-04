@@ -3,6 +3,7 @@
 @import "./main_container.css";
 @import "./slider.css";
 @import "./shell.css";
+@import "./modal_window.css";
 
 .modalOpen {
   overflow: hidden;

@@ -1,22 +1,20 @@
-import React from 'react';
-import MainItemContainer from '../shared/MainItemContainer';
-import Slider from './Slider';
-import Shell from './Shell';
+import React from "react";
+import MainItemContainer from "../shared/MainItemContainer";
+import Slider from "./Slider";
+import Shell from "./Shell";
 
 const MainContainer = () => {
-    return (
-      <main>
-        <MainItemContainer>
-          <Slider />
-        </MainItemContainer>
-        <MainItemContainer>
-          {/* <Slider /> */}
-        </MainItemContainer>
-        <MainItemContainer>
-          <Shell />
-        </MainItemContainer>
-      </main>
-    );
-}
+  return (
+    <main>
+      <MainItemContainer>
+        <Slider />
+      </MainItemContainer>
+      <MainItemContainer>{/* Table */}</MainItemContainer>
+      <MainItemContainer>
+        <Shell />
+      </MainItemContainer>
+    </main>
+  );
+};
 
 export default MainContainer;

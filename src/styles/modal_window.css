@@ -16,6 +16,7 @@
   height: 410px;
   width: 780px;
   background-color: #2d4560;
+  box-shadow: 15px 15px 15px #0000007b;
 }
 .header {
   padding: 16px;
@@ -46,4 +47,12 @@
 .children {
   padding: 16px;
   color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .modal_container {
+    position: fixed;
+    top: 0;
+    width: auto;
+  }
 }

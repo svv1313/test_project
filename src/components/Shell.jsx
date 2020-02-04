@@ -12,7 +12,6 @@ class Shell extends Component {
     if (status) {
       document.body.classList.add("modalOpen");
     } else {
-      console.log(5);
       document.body.classList.remove("modalOpen");
     }
 
@@ -23,10 +22,10 @@ class Shell extends Component {
     return (
       <Fragment>
         <div
+          className="shell_container"
           onClick={() => {
             this.onClickModal();
           }}
-          className="shell_container"
         >
           <img className="upper_shell" src={UpperShellImg} alt="upper shell" />
           <img className="shell" src={ShellImg} alt="shell" />

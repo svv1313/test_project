@@ -1,6 +1,5 @@
 import React from "react";
 import warning from "../assets/warning.svg";
-import "../styles/modal_window.css";
 
 const ModalWindow = ({ onClose, show }) => {
   if (!show) return null;

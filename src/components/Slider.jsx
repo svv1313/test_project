@@ -20,9 +20,10 @@ const Slider = () => {
 
   const _onMouseMove = event => {
     if (!dragging) return;
+    event.preventDefault();
+    const y = event.clientY || event.touches[0].pageY;
 
-    const offset =
-      event.clientY - sliderRef.current.getBoundingClientRect().top;
+    const offset = y - sliderRef.current.getBoundingClientRect().top;
     if (offset >= 0 && offset <= HEIGHT) {
       setTopOffset(offset);
     } else if (offset < 0) {
@@ -40,7 +41,11 @@ const Slider = () => {
 
   return (
     <Fragment>
-      <div className="slider-container" onMouseMove={_onMouseMove}>
+      <div
+        className="slider-container"
+        onMouseMove={_onMouseMove}
+        onTouchMove={_onMouseMove}
+      >
         <div className="indicators-container" style={{ height: `${HEIGHT}px` }}>
           <span className="slider-indicator">100</span>
           <span className="slider-indicator">0</span>
@@ -51,6 +56,7 @@ const Slider = () => {
               className="slider-handle"
               style={{ top: `${handlePosition}px` }}
               onMouseDown={_onMouseDown}
+              onTouchStart={_onMouseDown}
               onMouseUp={_onMouseUp}
             >
               <div className="arrow" />
