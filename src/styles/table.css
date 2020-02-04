@@ -1,0 +1,84 @@
+.table {
+  width: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 70%;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0px;
+}
+
+.table thead {
+  color: #7d9cc6;
+  background: #275789;
+  font-size: 15px;
+}
+
+td,
+th {
+  padding: 8px 0px 8px 40px;
+  text-align: left;
+}
+
+td {
+  background: #133252;
+}
+
+.table tbody {
+  padding: 20px 40px;
+  color: white;
+  background: #133252;
+}
+
+.table .icon {
+  background-color: #fec41c;
+  border-radius: 50%;
+  width: 11.51px;
+  height: 11.51px;
+}
+.table .icon img {
+  width: 11.51px;
+  height: 11.51px;
+}
+
+.table .bet,
+.table .profit {
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.table .green {
+  color: #73fc7f;
+}
+
+.table .red {
+  color: #fd7979;
+}
+
+.loading {
+  color: white;
+}
+/* 
+.table .id-0,
+.table .id-1,
+.table .id-2,
+.table .id-3,
+.table .id-4,
+.table .id-5,
+.table .id-6,
+.table .id-7,
+.table .id-8,
+.table .id-9 {
+  animation: slide-up 0.4s ease;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+} */

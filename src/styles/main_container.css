@@ -1,17 +1,22 @@
 main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 .main_item_container {
-    width: 30%;
-    background-color: #525252;
-    margin: 0 10px;
-    border-radius: 15px;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  min-height: 70%;
+  width: 20%;
+  background-color: #525252;
+  margin: 0 10px;
+  border-radius: 15px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-block {
+  width: 40%;
 }
