@@ -1,12 +1,12 @@
 .input_container {
-  width: 381px;
+  width: 96%;
   height: 57px;
   display: flex;
 }
 
 .input_item {
   padding: 7px 10px;
-  width: 265px;
+  width: 80%;
   color: #80a2cc;
   font-size: 14px;
   background-color: #0a1a33;
@@ -37,7 +37,7 @@
 .input input {
   background-color: transparent;
   height: 24px;
-  width: 225px;
+  width: 100%;
   color: #ffffff;
   font-size: 20px;
   font-weight: 600;
