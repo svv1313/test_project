@@ -20,8 +20,6 @@ const Slider = () => {
   };
 
   const _onMouseMove = (event, force) => {
-    console.log(event.clientY);
-
     if (!dragging && !force) return;
     event.preventDefault();
     const y = event.clientY || event.touches[0].pageY;
@@ -47,7 +45,8 @@ const Slider = () => {
       <div
         className="slider-container"
         onMouseMove={_onMouseMove}
-        onTouchMove={_onMouseMove}>
+        onTouchMove={_onMouseMove}
+      >
         <div className="indicators-container" style={{ height: `${HEIGHT}px` }}>
           <span className="slider-indicator">100</span>
           <span className="slider-indicator">0</span>
@@ -57,11 +56,13 @@ const Slider = () => {
           ref={sliderRef}
           onMouseDown={_onMouseDown}
           onTouchStart={_onMouseDown}
-          onMouseUp={_onMouseUp}>
+          onMouseUp={_onMouseUp}
+        >
           <div className="slider-bar-top" style={{ height: `${topOffset}px` }}>
             <div
               className="slider-handle"
-              style={{ top: `${handlePosition}px` }}>
+              style={{ top: `${handlePosition}px` }}
+            >
               <div className="arrow" />
               <div className="handle">
                 <span>{currentIndicatorNumber}</span>
