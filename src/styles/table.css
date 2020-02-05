@@ -13,8 +13,7 @@
   color: #7d9cc6;
   background: #275789;
   font-size: 15px;
-  z-index: 10;
-  position: relative;
+  font-family: "Roboto";
 }
 
 td,
@@ -25,6 +24,11 @@ th {
 
 .table tbody {
   color: white;
+  font-family: "Roboto";
+}
+
+.table .black {
+  font-weight: 900;
 }
 
 .table .icon {
@@ -32,13 +36,21 @@ th {
   border-radius: 50%;
   width: 11.51px;
   height: 11.51px;
+  position: relative;
+  display: inline-block;
+  top: 2px;
 }
-.table .icon img {
-  width: 11.51px;
-  height: 11.51px;
+.table img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
 }
 
-.table .bet,
+.table .bet-value,
 .table .profit {
   display: inline-block;
   margin-left: 4px;
@@ -56,10 +68,29 @@ th {
   color: white;
 }
 
-.table .new {
+.table tbody tr {
+  max-height: 32px;
+}
+
+/* .table .new {
   animation: slide-up 1s ease;
   position: relative;
   z-index: -1;
+}
+
+.table .id-10 {
+  animation: slide-down 1s ease;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 @keyframes slide-up {
@@ -70,5 +101,15 @@ th {
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+} */
+
+@media screen and (max-width: 425px) {
+  .table {
+    width: 100%;
+  }
+  .bet,
+  .payout {
+    display: none;
   }
 }
