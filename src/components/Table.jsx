@@ -20,8 +20,34 @@ export default function Table() {
   const { data, loading } = useSubscription(GET_INFO);
 
   if (!loading) {
-    if (newArray.length > 9) newArray.pop();
-    newArray.unshift(data.betAdded);
+    if (newArray.length > 10) newArray.pop();
+    newArray.unshift(
+      <tr className="new" key={data.betAdded.id}>
+        <td>{moment(data.betAdded.time).format("DD.MM.YY h:mm:ss")}</td>
+        <td>
+          <img
+            className="icon"
+            src="https://img.icons8.com/windows/32/000000/bitcoin.png"
+            alt="bit_coin"
+          />
+          <span className="bet">{data.betAdded.bet / 1000}</span>
+        </td>
+        <td>x{data.betAdded.payout / 4}</td>
+        <td>
+          <img
+            className="icon"
+            src="https://img.icons8.com/windows/32/000000/bitcoin.png"
+            alt="bit_coin"
+          />
+          <span
+            className={`profit ${data.betAdded.profit > 0 ? "green" : "red"}`}
+          >
+            {data.betAdded.profit / 1000}
+          </span>
+        </td>
+      </tr>
+    );
+
   }
 
   if (loading) {
@@ -40,34 +66,7 @@ export default function Table() {
               <th>PROFIT</th>
             </tr>
           </thead>
-          <tbody>
-            {newArray.map((element, index) => (
-              <tr className={`id-${index}`} key={element.id}>
-                <td>{moment(element.time).format("DD.MM.YY h:mm:ss")}</td>
-                <td>
-                  <img
-                    className="icon"
-                    src="https://img.icons8.com/windows/32/000000/bitcoin.png"
-                    alt="bit_coin"
-                  />
-                  <span className="bet">{element.bet / 1000}</span>
-                </td>
-                <td>x{element.payout / 4}</td>
-                <td>
-                  <img
-                    className="icon"
-                    src="https://img.icons8.com/windows/32/000000/bitcoin.png"
-                    alt="bit_coin"
-                  />
-                  <span
-                    className={`profit ${element.profit > 0 ? "green" : "red"}`}
-                  >
-                    {element.profit / 1000}
-                  </span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+          <tbody>{newArray.map((element, index) => element)}</tbody>
         </table>
       )}
     </Fragment>
