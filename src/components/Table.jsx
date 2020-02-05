@@ -68,7 +68,6 @@ export default function Table() {
         </div>
       </Fragment>
     );
-
   }
 
   if (loading) {
