@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useSubscription } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 import moment from "moment";
@@ -18,22 +18,43 @@ const GET_INFO = gql`
 const newArray = [];
 export default function Table() {
   const { data, loading } = useSubscription(GET_INFO);
+  useEffect(() => {
+    try {
+      const elements = document.querySelectorAll(".bets-table .td");
+      elements.forEach(e=>{
+        e.animate(
+          [
+            { transform: `translateY(${-32}px)` },
+            { transform: `translateY(${0}px)` }
+          ],
+          {
+            duration: 500,
+            iterations: 1,
+            easing: "ease-in-out"
+          }
+        );
+        e.style.transform = `translateY(${0}px)`;
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  });
 
   if (!loading) {
     if (newArray.length > 10) newArray.pop();
     newArray.unshift(
-      <tr className="new" key={data.betAdded.id}>
-        <td>{moment(data.betAdded.time).format("DD.MM.YY h:mm:ss")}</td>
-        <td>
+      <Fragment key={data.betAdded.id}>
+        <div className="td">{moment(data.betAdded.time).format("DD.MM.YY h:mm:ss")}</div>
+        <div className="td">
           <img
             className="icon"
             src="https://img.icons8.com/windows/32/000000/bitcoin.png"
             alt="bit_coin"
           />
           <span className="bet">{data.betAdded.bet / 1000}</span>
-        </td>
-        <td>x{data.betAdded.payout / 4}</td>
-        <td>
+        </div>
+        <div className="td">x{data.betAdded.payout / 4}</div>
+        <div className="td">
           <img
             className="icon"
             src="https://img.icons8.com/windows/32/000000/bitcoin.png"
@@ -44,8 +65,8 @@ export default function Table() {
           >
             {data.betAdded.profit / 1000}
           </span>
-        </td>
-      </tr>
+        </div>
+      </Fragment>
     );
 
   }
@@ -57,17 +78,15 @@ export default function Table() {
   return (
     <Fragment>
       {!loading && (
-        <table className="table">
-          <thead>
-            <tr>
-              <th>TIME</th>
-              <th>BET</th>
-              <th>MULTIPLIER</th>
-              <th>PROFIT</th>
-            </tr>
-          </thead>
-          <tbody>{newArray.map((element, index) => element)}</tbody>
-        </table>
+        <div className="bets-table">
+          <div className="thead">
+              <div className="th">TIME</div>
+              <div className="th">BET</div>
+              <div className="th">MULTIPLIER</div>
+              <div className="th">PROFIT</div>
+          </div>
+          <div  className="tbody">{newArray.map((element, index) => element)}</div>
+        </div>
       )}
     </Fragment>
   );
