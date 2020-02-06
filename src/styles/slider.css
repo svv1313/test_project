@@ -66,31 +66,8 @@ span.slider-indicator {
   height: 68px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1023px) {
   .slider-container {
     height: 560px;
   }
-  /* .slider-bar-bottom,
-  .slider-bar-top {
-    width: 65px;
-  } */
-
-  /* span.slider-indicator {
-    font-size: 30px;
-  } */
-  /* .slider-handle .handle {
-    width: 88px;
-    height: 42px;
-  } */
-  /* .slider-handle .arrow {
-    border-top: 25px solid transparent;
-    border-bottom: 17px solid transparent;
-    border-right: 33px solid #2a434f;
-  } */
-  /* .slider-handle {
-    font-size: 23px;
-  }
-  .slider-handle span {
-    line-height: 42px;
-  } */
 }

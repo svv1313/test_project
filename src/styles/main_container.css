@@ -19,9 +19,8 @@ main {
 }
 
 .main-block {
-  width: 40%;
-  min-height: 70%;
   width: 30%;
+  min-height: 70%;
   background-color: #525252;
   margin: 25px 25px;
   border-radius: 15px;
@@ -32,7 +31,18 @@ main {
   justify-content: space-around;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+  .main_item_container {
+    width: 30%;
+  }
+
+  .main-block {
+    width: 40%;
+    margin: 25px 5px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
   main {
     flex-direction: column;
     margin-bottom: 100px;

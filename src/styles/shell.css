@@ -7,6 +7,7 @@ img.shell {
     margin-left: auto;
     margin-right: auto;
     width: 274px;
+    max-width: 100%;
 }
 
 img.upper_shell {
@@ -24,3 +25,5 @@ img.upper_shell:hover {
     top: 145px;
     transition: top 0.4s ease-in-out 0s;
 }
+
+

@@ -12,7 +12,7 @@
 
 .bets-table .thead {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1.2fr 0.6fr 1.2fr 0.8fr;
   padding-left: 40px;
   color: #7d9cc6;
   background: #275789;
@@ -33,7 +33,7 @@
   padding-left: 40px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1.2fr 0.6fr 1.2fr 0.8fr;
   grid-template-rows: repeat(10, 1fr);
   color: white;
   height: 320px;
@@ -91,6 +91,16 @@
   color: white;
 }
 
+@media screen and (max-width: 1220px) {
+  .bets-table .tbody {
+    padding-left: 10px;
+  }
+
+  .bets-table .thead {
+    padding-left: 10px;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .bet,
   .payout {
@@ -101,7 +111,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .bets-table .thead{
+  .bets-table .thead {
     grid-template-columns: repeat(2, 1fr);
   }
 }
